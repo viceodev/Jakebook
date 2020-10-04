@@ -1,0 +1,207 @@
+@import "config";
+
+div.hero{
+    height: 350px;
+    background-image: url("../img/academy.jpeg");
+    background-size: 130%;
+    @include setTextBackground($dark-color);
+    background-color: $dark-color;
+    background-blend-mode: overlay;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    margin: auto;
+
+    p.hero-title{
+        font-size: 40px;
+        padding: 0px 10px;
+    }
+    
+    hr{
+        color: $light-color;
+        width: 70%;
+        margin: auto;
+    }
+
+    p:nth-child(n + 2){
+        padding: 10px;
+    }
+}
+
+section.info{
+    @include setTextBackground($light-color);
+
+    
+
+    div.info-item{
+        width: 90%;
+        margin: auto;
+        margin: 10px auto;
+
+        img{
+            width: 100%;
+            height: 400px;
+        }
+        p.info{
+            padding: 10px;
+            text-align: center;
+        }   
+    }
+
+}
+
+section.services{
+    @include setTextBackground($light-color);
+
+    div.services-item{
+        width: 90%;
+        margin: 20px auto;
+        div.header{
+            img{
+                width: 100%;
+            }
+        }
+
+        button{
+            display: block;
+            margin: 6px auto;
+        }
+    }
+}
+
+
+
+section.partners{
+    div.partners-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        align-items: center;
+        width: 90%;
+        margin: auto;
+
+        svg{
+            width: 70px;
+            margin: 5px auto;
+            fill: $dark-color;
+        }
+    }
+}
+
+
+@media screen and (min-width: 768px){
+
+    div.hero{
+        height: 500px;
+        box-shadow: none;
+        background-size: cover;
+        
+        
+        div.hero-content{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 80%;
+            margin: auto;
+            padding: 40px auto;
+            
+          
+
+            div.hero-image{
+                display: inline;
+                opacity: 0;
+
+                img{
+                    width: 300px;
+                }
+            }
+
+        }
+
+        
+    }
+
+
+    section.info{
+        background-color: transparent;
+        div.info-container{
+            transform: translateY(-50px);
+            width: 80%;
+            margin: 10px auto;
+            display: flex;
+            justify-content: space-between;
+
+            div.info-item{
+                border-bottom-right-radius: 50px;
+                border-top-right-radius: 50px;
+                width: 45%;
+                transition: .7s all;
+
+                &:hover{
+                    transform: translateY(-10px);
+                    @include setTextBackground($secondary-color);
+                }
+
+                p.title{
+                    border-top-right-radius: 50px;
+                }
+
+                img{
+                    transition: .6s all;
+
+                     &:hover{
+                        box-shadow: 1px 2px 6px $dark-color;
+                        transform: scale(110%);
+                     }
+                }
+                
+            }
+        }
+    }
+
+    section.services{
+        div.services_card{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;   
+        
+
+        div.services-item{
+            transition: .5s all;
+            &:hover{
+                transform: translateY(-10px);
+            }
+           img{
+                width: 100%;
+                height: 300px;
+                margin: 0;
+                padding: 0;
+                transition: 1s all;;
+
+                &:hover{
+                    cursor: pointer;
+                    box-shadow:1px 2px 6px $dark-color;;
+                    transform: scale(120%);
+                }
+            } 
+        }
+    }
+}
+
+
+section.partners{
+    div.partners-container{
+        width: 70%;
+        @include setTextBackground($dark-color);
+        margin-top: 30px;
+        border-radius: 20px;
+
+        svg{
+            fill: $light-color;
+            width: 60px;
+            transition:  1s all;
+
+            &:hover{
+                transform: rotate(360deg);
+            }
+        }
+    }
+}
+}

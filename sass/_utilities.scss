@@ -1,0 +1,185 @@
+@import 'config';
+
+.bg-primary{
+    @include setTextBackground($primary-color);
+}
+
+.bg-secondary{
+    @include setTextBackground($secondary-color);
+}
+
+.bg-light{
+    @include setTextBackground($light-color);
+}
+
+.bg-dark{
+    @include setTextBackground($dark-color);
+}
+
+hr{
+    color: $secondary-color;
+}
+
+p{
+    font-size: 20px;
+}
+
+a{
+    text-decoration: none;
+    outline: none;
+}
+
+li,input, textarea{
+    outline: none;
+}
+.container{
+    width: 80%;
+    margin: auto;
+}
+
+.container-full{
+    width: 100%;
+}
+
+//margin and padding functionality 
+$listNum: (0,1,2,3,4,5);
+@each $num in $listNum{
+    .p-#{$num}{
+        padding: #{$num * 5}px;
+    }
+
+    .pl-#{$num}{
+        padding-left: #{$num * 5}px;
+    }
+
+    .pr-#{$num}{
+        padding-right: #{$num * 5}px;
+    }
+
+    .pt-#{$num}{
+        padding-top: #{$num * 5}px;
+    }
+
+    .pb-#{$num}{
+        padding-bottom: #{$num * 5}px;
+    }
+
+    .m-#{$num}{
+        margin: #{$num * 5}px;
+    }
+
+    .ml-#{$num}{
+        margin-left: #{$num * 5}px;
+    }
+
+    .mr-#{$num}{
+        margin-right: #{$num * 5}px;
+    }
+
+    .mt-#{$num}{
+        margin-top: #{$num * 5}px;
+    }
+
+    .mb-#{$num}{
+        margin-bottom: #{$num * 5}px;
+    }
+}
+
+.m-auto{
+    margin: auto;
+}
+
+.p-auto{
+    padding: auto;
+}
+
+//buttons
+%btn{
+    display: inline-block;
+    margin: 5px;
+    width: 100px;
+    height: 40px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .4s;
+
+    &:hover{
+        transform: scale(1.1) translateY(3px);
+        border: 2px solid;
+        border-color: inherit;
+    }
+}
+
+.button{
+    @extend %btn;
+}
+
+.button-primary{
+    @extend %btn;
+    @include setTextBackground($primary-color);
+}
+
+.button-secondary{
+    @extend %btn;
+    @include setTextBackground($secondary-color);
+}
+//button end
+
+//display flex functionality
+%flex{
+    display: flex;
+    // align-items: center;
+}
+
+.flex-around{
+    @extend %flex;
+    justify-content: space-around;
+}
+
+.flex-between{
+    @extend %flex;
+    justify-content: space-between;
+}
+
+.shadow{
+    box-shadow: 1px 2px 6px $dark-color;
+}
+
+.shadow-lg{
+    box-shadow: 3px 3px 20px $dark-color;
+}
+
+.shadow-sm{
+    box-shadow: .4px 1px 3px $dark-color;
+}
+
+.rounded{
+    border-radius: $form-borderRadius;
+}
+
+.d-none{
+    display: none;
+}
+
+.title{
+    font-size: 30px;
+    text-align: center;
+    @include setTextBackground($secondary-color);
+    padding: 10px;
+}
+.title-sm{
+    font-size: 23px;
+    text-align: center;
+    @include setTextBackground($primary-color);
+    padding: 10px;
+}
+
+.capitalize{
+    text-transform: capitalize;
+}
+
+.center{
+    text-align: center;
+}

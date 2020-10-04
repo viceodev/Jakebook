@@ -1,0 +1,35 @@
+$primary-color: #29339B; 
+$secondary-color: darken(#FF3A20,15);
+$tertiary-color: #B6D6CC;
+$light-color: #f4f4f4;
+$dark-color: #3B3C36;
+$form-borderRadius: 10px;
+$box-shadow: 1px 2px 6px $dark-color;
+
+//setTextColor
+@function setTextColor($color){
+    @if(lightness($color) > 70){
+        @return $dark-color;
+    }@else{
+        @return $light-color;
+    }
+}
+
+@mixin setTextBackground($color){
+    background-color: $color;
+    color: setTextColor($color);
+}
+
+//form border change based on validatity of an input
+form{
+    $listElement: ("input", "textarea", "select", "checkbox", "radio");
+
+    @each $element in $listElement{
+        #{$element}:invalid{
+            border: 1.3px solid red;
+        }
+        #{$element}:valid{
+           border: 1.3px solid green; 
+        }
+    }
+}

@@ -1,0 +1,270 @@
+@import 'config';
+
+
+
+div.hero{
+    background-image: url("../img/background.png");
+    background-size: cover;
+    background-color: $primary-color;
+    background-blend-mode: overlay;
+    background-attachment: fixed;
+    padding: 50px;
+
+    p{
+        padding: 20px 0px;
+        color: $light-color;
+        font-size: 30px;
+    }
+
+    small{
+        font-size: 17px;
+        color: $light-color;
+    }
+}
+
+section.terminals{
+
+div.card{
+
+    
+    
+    & div.card-item{
+        width: 90%;
+        margin: 20px auto;
+
+        img{
+            width:100%;
+        }
+
+        a{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        svg{
+            height: 60px;
+            width: 60px;
+            transform: translateY(-20px);
+            background-color: $secondary-color;
+            border-radius:50%;
+            padding: 10px;
+            fill: $light-color;
+            order: 2;
+            margin-right: 20px;
+        }
+
+        p{
+            font-size: 20px;
+            text-align: center;
+            padding: 15px;
+            order: 1;
+        }
+    }
+}
+}
+
+section.services{
+    @include setTextBackground($light-color);
+
+    div.services-item{
+        width: 90%;
+        margin: 20px auto;
+        div.header{
+            img{
+                width: 100%;
+            }
+        }
+
+        button{
+            display: block;
+            margin: 6px auto;
+        }
+    }
+}
+
+
+section.app{
+    div.download{
+        @include setTextBackground($primary-color);
+        width: 90%;
+    }
+
+    div.svg-group{
+        width: fit-content;
+        display: flex;
+        margin: 10px auto;
+        
+        svg{
+            width: 50px;
+            height: 50px;
+            margin: auto;
+            fill: white;
+            margin: 10px;
+        }
+    }
+}
+
+
+section.children-discount{
+    div.discount{
+     @include setTextBackground($secondary-color);
+    width: 90%;   
+    }
+
+    div.svg-group{
+        width: fit-content;
+        display: flex;
+        margin: 10px auto;
+        
+        svg{
+            width: 50px;
+            height: 50px;
+            margin: auto;
+            fill: white;
+            margin: 10px;
+        }
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//large screen all
+@media screen and (min-width: 768px){
+
+    div.hero{
+        margin-top: 75px;
+
+        div.hero-content{
+            height: 400px;
+            width: 80%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: auto 100px!important;
+
+            div.hero-img{
+                display: inline;
+                padding-right: 0px;
+
+                img{
+                    width: 70%;
+                }
+            }   
+
+            div.hero-info{
+                p{
+                    font-size: 45px;
+                }
+
+                small{
+                    font-size: 20px;
+                }
+
+                button{
+                    margin-top: 18px !important;
+                }
+            }
+        }
+        
+    }
+
+
+    //terminals section
+    section.terminals{
+
+        div.card{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            justify-content: space-between;
+            flex-basis: 100%;
+
+            div.card-item{
+                transition: .1s all;
+                &:hover{
+                    transform: translateY(-10px);
+                }
+                svg{
+                    transition: 1s all;
+                }
+               svg:hover{
+                   transform: translateY(-20px) rotate(1440deg)
+               }
+            }
+        }
+    }
+
+    //services section
+    section.services{
+        div.services_card{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;   
+        
+
+        div.services-item{
+            transition: .5s all;
+            &:hover{
+                transform: translateY(-10px);
+            }
+           img{
+                width: 100%;
+                height: 300px;
+                margin: 0;
+                padding: 0;
+                transition: 1s all;;
+
+                &:hover{
+                    cursor: pointer;
+                    box-shadow:1px 2px 6px $dark-color;;
+                    transform: scale(120%);
+                }
+            } 
+        }
+    }
+}
+
+
+
+    div.app-flex{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        section.children-discount{
+            margin-top: 0;
+        }
+    }
+
+   
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
