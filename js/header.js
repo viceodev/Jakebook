@@ -29,7 +29,6 @@ function getMenu(){
         }else if(pageYOffset != 0){
             header.className = "desktop shadow-sm d-none";
         }
-        console.log("true");
     }
     onunload = checkHeader();
     onscroll = checkHeader;
